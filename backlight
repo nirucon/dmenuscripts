@@ -1,0 +1,53 @@
+g#!/usr/bin/env bash
+#
+# Script name: backlight
+# Description: backlight laptop
+# Contributors: Nicklas Rudolfsson
+# dep pkg: brightnessctl
+
+# bugs discover
+set -euo pipefail
+
+# options
+declare -a options=(
+"10%"
+"30%"
+"50%"
+"70%"
+"100%"
+"Quit"
+)
+
+_out(){
+    ${_out} "backlight" "$@"
+}
+
+# array into dmenu
+# "printf '%s\n'" to format the array one item to a line
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -p 'Backlight control:' "${@}")
+
+# what to do with the options
+case $choice in
+    '10%')
+            brightnessctl set 10%
+        ;;
+    '30%')
+            brightnessctl set 30%
+        ;;
+    '50%')
+            brightnessctl set 50%
+        ;;
+    '70%')
+            brightnessctl set 70%	
+        ;;
+    '100%')
+            brightnessctl set 100%
+        ;;
+    'Quit')
+        output "Program terminated." && exit 0
+    ;;
+    *)
+        exit 0
+    ;;
+esac
+

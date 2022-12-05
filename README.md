@@ -1,8 +1,8 @@
 # dmenuscripts
-Scripts for dwm/dmenu.
-Made for my own installs but feel free to use.
-Put file(s) in /usr/local/bin
-chmod+x
+* Scripts for dwm/dmenu.
+* Made for my own installs but feel free to use.
+* Put file(s) in /usr/local/bin
+* chmod+x
 
 ## scripts
 

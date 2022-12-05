@@ -6,6 +6,6 @@
 
 ## scripts
 
-sverigesradio = play swedish radio (SR) via dmenu
-quit = suspend, logout, kill session etc via dmenu
-backlight = control backlight on laptop via dmenu
+* sverigesradio = play swedish radio (SR) via dmenu
+* quit = suspend, logout, kill session etc via dmenu
+* backlight = control backlight on laptop via dmenu

@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+#
+# Script name: vol
+# Description: dmenu control volume freebsd
+# Contributors: Nicklas Rudolfsson
+
+# bugs discover
+set -euo pipefail
+
+# options
+declare -a options=(
+"10%"
+"30%"
+"50%"
+"70%
+"90%"
+"100%"
+"Quit"
+)
+
+_out(){
+    ${_out} "vol" "$@"
+}
+
+# array into dmenu
+# "printf '%s\n'" to format the array one item to a line
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -p 'Volume control:' "${@}")
+
+# what to do with the options
+case $choice in
+    '10%')
+            mixer vol 10
+        ;;
+    '30%')
+            mixer vol 30
+        ;;
+    '50%')
+            mixer vol 50
+        ;;
+    '70%')
+            mixer vol 70
+        ;;
+    '90%')
+            mixer vol 90
+        ;;
+    '100%')
+            mixer vol 100
+        ;;
+    'Quit')
+        output "Program terminated." && exit 0
+    ;;
+    *)
+        exit 0
+    ;;
+esac
+

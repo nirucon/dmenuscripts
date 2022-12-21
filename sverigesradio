@@ -46,7 +46,8 @@ case $choice in
             mpv https://sverigesradio.se/topsy/direkt/4540-hi-mp3.m3u
         ;;
     'Kill-mpv')
-            killall mpv
+            pkill mpv
+            # killall mpv
         ;;
     'Quit')
         output "Program terminated." && exit 0
